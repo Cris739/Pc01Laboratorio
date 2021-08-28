@@ -1,0 +1,34 @@
+@model demomvc.Models.Registro
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Registro de venta de videojuegos</h1>
+
+    <form asp-controller="Registro" asp-action="Create">
+
+        <label asp-for="nombre" class="form-label"></label>
+        <input asp-for="nombre" class="form-control form-control-sm" type="text"/>
+
+        <label asp-for="precio" class="control-label"></label>
+        <input asp-for="precio" class="form-control" type="number"/>
+<br><br>
+        <label asp-for="descuento"class="control-label">descuento del 10% en todos los videojuegos</label>
+<br><br>
+        <label asp-for="categoria" class="control-label"></label>
+        <select class="form-control" id="categoria" name="categoria">
+            <option>terror</option>
+            <option>aventura</option>
+            <option>multijugador</option>
+        </select>
+
+<br><br><br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </form>
+    <h1>@ViewData["Message"]</h1>
+</div>
